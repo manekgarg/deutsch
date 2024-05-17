@@ -1,10 +1,20 @@
-const words = [
-  { word: "Kleidung", article: "die", reason: "ends with -ung (feminine)" },
-  { word: "Stuhl", article: "der", reason: "masculine noun" },
-  { word: "Tasse", article: "die", reason: "feminine noun" },
-  { word: "Fenster", article: "das", reason: "neuter noun" },
-  // Add more words here following the same format
-];
+JavaScript
+const wordsUrl = "words.json";  // Path to your JSON file (relative to script.js)
+
+fetch(wordsUrl)
+  .then(response => response.json())
+  .then(data => {
+    words = data;
+    showWord();  // Call showWord after data is fetched
+  });JavaScript
+const wordsUrl = "words.json";  // Path to your JSON file (relative to script.js)
+
+fetch(wordsUrl)
+  .then(response => response.json())
+  .then(data => {
+    words = data;
+    showWord();  // Call showWord after data is fetched
+  });
 
 let currentWord = 0;
 let score = 0;
